@@ -49,7 +49,19 @@ public class Sort {
 
     // PART B.  Sorting a 1000-word list!
     public static void selectionSortWordList(ArrayList<String> words) {
-        // selectionSort(words);
+        int count = 0;
+        for (int j = 1; j < words.size(); j++) {
+            String temp = words.get(j);
+            int possibleIndex = j;
+            while (possibleIndex > 0 && temp < elements[possibleIndex - 1]) {
+                elements[possibleIndex] = elements[possibleIndex - 1];
+                possibleIndex--;
+                count++;
+            }
+            elements[possibleIndex] = temp;
+
+        }
+        System.out.println(count);
     }
 
     public static void insertionSortWordList(ArrayList<String> words) {
